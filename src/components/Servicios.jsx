@@ -1,8 +1,29 @@
 import ganadoImg from '../assets/650729244_18076863206614141_2951599525777551674_n.jpg'
 import corralImg from '../assets/121226907_575501216539253_5798751890701691224_n.jpg'
 import campoImg from '../assets/pexels-paulo-gustavo-modesto-1241776887-36378862.jpg'
+import asesoriaImg from '../assets/1d8b89e4f13910a8361063767534faca (1) - copia.jpg'
+import comercializacionImg from '../assets/abf1d0b881eafb2960904e9e7c10a217.jpg'
+import capacitacionImg from '../assets/D_NQ_NP_776229-MLM52451074637_112022-O.webp'
 
 const Servicios = () => {
+  const serviciosDetalle = [
+    {
+      img: asesoriaImg,
+      title: 'Asesoría técnica ganadera',
+      desc: 'Como organización ganadera en etapa inicial, se contempla brindar asesorías técnicas básicas orientadas al fortalecimiento de las capacidades productivas de los socios y al mejor desarrollo de la actividad pecuaria. Estas asesorías estarán enfocadas en áreas fundamentales como el manejo adecuado del ganado, programas de alimentación balanceada, control sanitario, prevención de enfermedades y buenas prácticas de bienestar animal.',
+    },
+    {
+      img: comercializacionImg,
+      title: 'Comercialización de ganado',
+      desc: 'Como organización ganadera en desarrollo, se brindarán asesorías orientadas a fortalecer las capacidades de los socios en la comercialización de ganado bovino. Estas estarán enfocadas en el conocimiento del mercado, identificación de mejores canales de venta, negociación de precios y establecimiento de relaciones comerciales con compradores locales y regionales. Asimismo, se promoverá la capacitación en aspectos como la determinación del peso y valor del ganado, manejo de información de precios del mercado, selección del momento adecuado para la venta y cumplimiento de requisitos sanitarios y de movilización.',
+    },
+    {
+      img: capacitacionImg,
+      title: 'Capacitación en manejo animal',
+      desc: 'La organización también impulsará la capacitación en el manejo adecuado del ganado, con el propósito de garantizar el bienestar animal y mejorar la productividad. Esta capacitación incluirá prácticas relacionadas con el manejo en corrales, alimentación adecuada, control del estrés, movilización segura de los animales y cumplimiento de normas básicas de sanidad. De igual manera, se fomentará el uso de buenas prácticas pecuarias que permitan prevenir enfermedades, reducir pérdidas y optimizar el crecimiento de los becerros durante la etapa de engorda.',
+    },
+  ]
+
   return (
     <section id="servicios" className="bg-gray-50 section-padding">
       <div className="container-custom">
@@ -31,7 +52,7 @@ const Servicios = () => {
         </div>
 
         {/* Servicios highlight */}
-        <div className="bg-wine-900 rounded-3xl p-8 md:p-12">
+        <div className="bg-wine-900 rounded-3xl p-8 md:p-12 mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-gold-500 italic mb-6">
@@ -59,6 +80,21 @@ const Servicios = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* 3 Cards de servicios detallados */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {serviciosDetalle.map((s, i) => (
+            <div key={i} className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+              <div className="h-56 overflow-hidden">
+                <img src={s.img} alt={s.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-wine-900 mb-4 font-heading">{s.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
