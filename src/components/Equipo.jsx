@@ -1,10 +1,14 @@
+import yamilethImg from '../assets/YAMILETH PEREZ SANCHEZ.jpeg'
+import edgarImg from '../assets/EDGAR PEREZ SANCHEZ.jpeg'
+import jeniferImg from '../assets/JENIFER PEREZ PEREZ.jpeg'
+import bryanImg from '../assets/BRYAN RAFAEL MILLARES HERNÁNDEZ.jpeg'
+
 const Equipo = () => {
   const miembros = [
-    { nombre: 'Yamileth Perez', cargo: 'Gerente general', emoji: '👩‍💼' },
-    { nombre: 'Edgar Perez', cargo: 'Administrador de fincas', emoji: '👨‍💼' },
-    { nombre: 'Jenifer Perez', cargo: 'Encargado de compras y ventas de ganado', emoji: '👩‍💼' },
-    { nombre: 'Bryan Rafael Millares', cargo: 'Operadores de maquinaria agrícola', emoji: '👨‍🔧' },
-    { nombre: 'Bryan Rafael Millares', cargo: 'Personal de mantenimiento y cuidado de los animales', emoji: '👨‍🌾' },
+    { nombre: 'Yamileth Perez Sanchez', cargo: 'Gerente general', img: yamilethImg },
+    { nombre: 'Edgar Perez Sanchez', cargo: 'Administrador de fincas', img: edgarImg },
+    { nombre: 'Jenifer Perez Perez', cargo: 'Encargada de compras y ventas de ganado', img: jeniferImg },
+    { nombre: 'Bryan Rafael Millares Hernández', cargo: 'Operador de maquinaria agrícola y mantenimiento', img: bryanImg },
   ]
 
   return (
@@ -24,30 +28,14 @@ const Equipo = () => {
         </p>
 
         <div className="border-t border-gray-200 pt-16">
-          {/* Top row - 3 members */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
-            {miembros.slice(0, 3).map((m, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {miembros.map((m, i) => (
               <div key={i} className="text-center group">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-100 rounded-2xl border-2 border-gray-200 group-hover:border-gold-500/50 transition-colors flex items-center justify-center overflow-hidden">
-                  {/* Placeholder — reemplazar con foto real cuando la tengan */}
-                  <span className="text-5xl">{m.emoji}</span>
+                <div className="w-36 h-36 mx-auto mb-5 rounded-2xl border-2 border-gray-200 group-hover:border-gold-500/50 transition-all duration-300 overflow-hidden shadow-lg group-hover:shadow-xl">
+                  <img src={m.img} alt={m.nombre} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                 </div>
                 <p className="text-gray-500 text-sm mb-1">{m.cargo}</p>
-                <h3 className="text-xl font-bold text-gold-600 font-heading">{m.nombre}</h3>
-                <p className="text-gray-400 text-xs mt-1">Productores Ganaderos de Engorda del Sureste, S.A. de C.V.</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom row - 2 members centered */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-2xl mx-auto">
-            {miembros.slice(3).map((m, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-32 h-32 mx-auto mb-4 bg-gray-100 rounded-2xl border-2 border-gray-200 group-hover:border-gold-500/50 transition-colors flex items-center justify-center overflow-hidden">
-                  <span className="text-5xl">{m.emoji}</span>
-                </div>
-                <p className="text-gray-500 text-sm mb-1">{m.cargo}</p>
-                <h3 className="text-xl font-bold text-gold-600 font-heading">{m.nombre}</h3>
+                <h3 className="text-lg font-bold text-gold-600 font-heading">{m.nombre}</h3>
                 <p className="text-gray-400 text-xs mt-1">Productores Ganaderos de Engorda del Sureste, S.A. de C.V.</p>
               </div>
             ))}
