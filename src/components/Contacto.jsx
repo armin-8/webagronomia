@@ -36,36 +36,53 @@ const Contacto = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Info */}
-          <div className="flex flex-col justify-center">
-            <p className="text-white/70 leading-relaxed mb-10 text-lg">
-              Hola, somos una organización de productores ganaderos ubicada en el sureste de
-              Teapa, Tabasco. Nos especializamos en la engorda de ganado para la producción
-              de carne de alta calidad.
-            </p>
+          {/* Info + Mapa */}
+          <div className="flex flex-col justify-between">
+            <div>
+              <p className="text-white/70 leading-relaxed mb-10 text-lg">
+                Hola, somos una organización de productores ganaderos ubicada en el sureste de
+                Teapa, Tabasco. Nos especializamos en la engorda de ganado para la producción
+                de carne de alta calidad.
+              </p>
 
-            <div className="space-y-6">
-              {[
-                { icon: '📍', title: 'Productores Ganaderos', info: 'Teapa, Tabasco, México' },
-                { icon: '📞', title: 'Teléfono', info: '+52 (993) 123-4567' },
-                { icon: '✉️', title: 'Email', info: 'contacto@productoresganaderos.com' },
-                { icon: '📘', title: 'Facebook', info: '@productores_ganaderos' },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-5 group">
-                  <div className="w-14 h-14 bg-wine-800/60 border border-wine-700/30 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:border-gold-500/30 transition-colors">
-                    <span className="text-xl">{item.icon}</span>
+              <div className="space-y-5 mb-10">
+                {[
+                  { icon: '📍', title: 'Productores Ganaderos', info: 'Teapa, Tabasco, 86800' },
+                  { icon: '📞', title: '(+34) 947 002 963', info: '' },
+                  { icon: '✉️', title: 'yamiletperezsanchez@gmail.com', info: '' },
+                  { icon: '📘', title: '@pagina_de_Facebook', info: '' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 bg-wine-800/60 border border-wine-700/30 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:border-gold-500/30 transition-colors">
+                      <span className="text-lg">{item.icon}</span>
+                    </div>
+                    <div>
+                      <p className="text-gold-500 font-semibold text-sm">{item.title}</p>
+                      {item.info && <p className="text-white/50 text-xs">{item.info}</p>}
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-gold-500 font-semibold">{item.title}</p>
-                    <p className="text-white/60 text-sm">{item.info}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Google Maps embed */}
+            <div className="rounded-2xl overflow-hidden border border-wine-700/30 shadow-xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15267.!2d-92.952085!3d17.547064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edb0ae04d48ed3%3A0x5502d9977576e3b7!2sEsquipulas%2C%2086800%20Teapa%2C%20Tab.%2C%20Mexico!5e0!3m2!1ses!2smx!4v1711000000000"
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación Teapa, Tabasco"
+              ></iframe>
             </div>
           </div>
 
           {/* Form */}
           <div className="bg-wine-900/50 backdrop-blur-sm border border-wine-800/50 rounded-3xl p-8">
+            <h3 className="text-xl font-heading font-bold text-white mb-6">Envíanos un mensaje</h3>
             {enviado && (
               <div className="bg-gold-500/10 border border-gold-500/30 text-gold-400 px-4 py-3 rounded-xl mb-6 text-center">
                 ¡Mensaje enviado con éxito!
