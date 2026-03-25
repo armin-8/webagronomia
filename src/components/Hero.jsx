@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react'
 import banner1Desktop from '../assets/banner ganadero 1.jpg'
 import banner2Desktop from '../assets/banner ganadero 2.jpg'
 import banner3Desktop from '../assets/banner ganadero 3.jpg'
-import banner1Mobile from '../assets/ABNNER1MOBILE.png'
-import banner2Mobile from '../assets/1.png'
-import banner3Mobile from '../assets/2.png'
+import banner1Mobile from '../assets/banner-mobile-ganado1.png'
+import banner2Mobile from '../assets/ banner-mobile-ganado2.png'
+import banner3Mobile from '../assets/banner-mobile-ganado3.png'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
