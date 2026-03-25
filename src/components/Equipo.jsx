@@ -1,7 +1,7 @@
 import yamilethImg from '../assets/YAMILETH PEREZ SANCHEZ.jpeg'
 import edgarImg from '../assets/EDGAR PEREZ SANCHEZ.jpeg'
 import jeniferImg from '../assets/JENIFER PEREZ PEREZ.jpeg'
-import bryanImg from '../assets/BRYAN RAFAEL MILLARES.jpeg'
+import bryanImg from '../assets/BRYAN RAFAEL MILLARES HERNANDEZ.jpeg'
 
 const Equipo = () => {
   const miembros = [
