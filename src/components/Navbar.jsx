@@ -4,7 +4,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  // Detectar scroll para cambiar estilo del navbar
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
@@ -13,14 +12,13 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Inicio', href: '#hero' },
-    { name: 'Nosotros', href: '#nosotros' },
+    { name: 'Sobre nosotros', href: '#nosotros' },
     { name: 'Servicios', href: '#servicios' },
-    { name: 'Proceso', href: '#proceso' },
-    { name: 'Alianzas', href: '#alianzas' },
+    { name: 'Fotogalería', href: '#galeria' },
+    { name: 'Equipo', href: '#equipo' },
     { name: 'Contacto', href: '#contacto' },
   ]
 
-  // Scroll suave al hacer click en un link
   const handleClick = (href) => {
     setIsOpen(false)
     const el = document.querySelector(href)
@@ -35,28 +33,27 @@ const Navbar = () => {
     }`}>
       <div className="flex justify-between items-center h-16 px-6">
         <a href="#hero" onClick={(e) => { e.preventDefault(); handleClick('#hero') }} className="flex items-center gap-2 group">
-          <span className="text-2xl group-hover:scale-110 transition-transform">🌾</span>
-          <span className="font-heading font-bold text-lg text-gold-500">AgroServicios</span>
+          <span className="font-heading font-bold text-sm md:text-base text-gold-500 leading-tight">
+            Productores Ganaderos<br className="md:hidden" /><span className="hidden md:inline"> del Sureste</span>
+          </span>
         </a>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
-              className="text-sm font-medium text-white/80 hover:text-gold-400 px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-200"
+              className="text-sm font-medium text-white/80 hover:text-gold-400 px-3 py-2 rounded-xl hover:bg-white/5 transition-all duration-200"
             >
               {link.name}
             </a>
           ))}
         </div>
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 rounded-xl hover:bg-white/10 transition-colors"
+          className="lg:hidden p-2 rounded-xl hover:bg-white/10 transition-colors"
           aria-label="Menú"
         >
           <div className="w-6 h-5 flex flex-col justify-between">
@@ -67,8 +64,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-80 pb-4' : 'max-h-0'}`}>
+      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-4' : 'max-h-0'}`}>
         {navLinks.map((link) => (
           <a
             key={link.href}

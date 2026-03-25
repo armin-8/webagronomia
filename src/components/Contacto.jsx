@@ -2,7 +2,7 @@ import { useState } from 'react'
 import bgImg from '../assets/3.png'
 
 const Contacto = () => {
-  const [formData, setFormData] = useState({ nombre: '', email: '', telefono: '', asunto: '', mensaje: '' })
+  const [formData, setFormData] = useState({ nombre: '', email: '', telefono: '', mensaje: '' })
   const [enviado, setEnviado] = useState(false)
 
   const handleChange = (e) => {
@@ -14,7 +14,7 @@ const Contacto = () => {
     e.preventDefault()
     console.log('Formulario:', formData)
     setEnviado(true)
-    setFormData({ nombre: '', email: '', telefono: '', asunto: '', mensaje: '' })
+    setFormData({ nombre: '', email: '', telefono: '', mensaje: '' })
     setTimeout(() => setEnviado(false), 5000)
   }
 
@@ -22,21 +22,48 @@ const Contacto = () => {
 
   return (
     <section id="contacto" className="relative section-padding overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0">
         <img src={bgImg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-wine-950/90"></div>
+        <div className="absolute inset-0 bg-wine-950/85"></div>
       </div>
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <span className="text-gold-500 text-sm font-semibold tracking-widest uppercase mb-4 block">Hablemos</span>
           <h2 className="section-title text-white">
-            Contácta<span className="gold-text">nos</span>
+            Contác<span className="gold-text">tanos</span>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Info */}
+          <div className="flex flex-col justify-center">
+            <p className="text-white/70 leading-relaxed mb-10 text-lg">
+              Hola, somos una organización de productores ganaderos ubicada en el sureste de
+              Teapa, Tabasco. Nos especializamos en la engorda de ganado para la producción
+              de carne de alta calidad.
+            </p>
+
+            <div className="space-y-6">
+              {[
+                { icon: '📍', title: 'Productores Ganaderos', info: 'Teapa, Tabasco, México' },
+                { icon: '📞', title: 'Teléfono', info: '+52 (993) 123-4567' },
+                { icon: '✉️', title: 'Email', info: 'contacto@productoresganaderos.com' },
+                { icon: '📘', title: 'Facebook', info: '@productores_ganaderos' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-5 group">
+                  <div className="w-14 h-14 bg-wine-800/60 border border-wine-700/30 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:border-gold-500/30 transition-colors">
+                    <span className="text-xl">{item.icon}</span>
+                  </div>
+                  <div>
+                    <p className="text-gold-500 font-semibold">{item.title}</p>
+                    <p className="text-white/60 text-sm">{item.info}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Form */}
           <div className="bg-wine-900/50 backdrop-blur-sm border border-wine-800/50 rounded-3xl p-8">
             {enviado && (
@@ -56,57 +83,15 @@ const Contacto = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-white/60 mb-2">Teléfono</label>
-                  <input type="tel" name="telefono" value={formData.telefono} onChange={handleChange} className={inputClasses} placeholder="(33) 1234-5678" />
+                  <input type="tel" name="telefono" value={formData.telefono} onChange={handleChange} className={inputClasses} placeholder="(993) 123-4567" />
                 </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-white/60 mb-2">Asunto *</label>
-                <select name="asunto" value={formData.asunto} onChange={handleChange} required className={inputClasses}>
-                  <option value="" className="bg-wine-900">Selecciona un asunto</option>
-                  <option value="asesoria" className="bg-wine-900">Asesoría en cultivos</option>
-                  <option value="suelos" className="bg-wine-900">Análisis de suelos</option>
-                  <option value="riego" className="bg-wine-900">Sistemas de riego</option>
-                  <option value="plagas" className="bg-wine-900">Control de plagas</option>
-                  <option value="otro" className="bg-wine-900">Otro</option>
-                </select>
               </div>
               <div>
                 <label className="block text-sm font-medium text-white/60 mb-2">Mensaje *</label>
-                <textarea name="mensaje" value={formData.mensaje} onChange={handleChange} required rows="4" className={`${inputClasses} resize-none`} placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                <textarea name="mensaje" value={formData.mensaje} onChange={handleChange} required rows="4" className={`${inputClasses} resize-none`} placeholder="Escríbenos tu mensaje..."></textarea>
               </div>
               <button type="submit" className="btn-primary w-full text-center text-lg">Enviar Mensaje</button>
             </form>
-          </div>
-
-          {/* Info */}
-          <div className="flex flex-col justify-center space-y-6">
-            {[
-              { icon: '📍', title: 'Ubicación', info: 'Jalisco, México' },
-              { icon: '📞', title: 'Teléfono', info: '+52 (33) 1234-5678' },
-              { icon: '✉️', title: 'Email', info: 'contacto@agroservicios.com' },
-              { icon: '🕐', title: 'Horario', info: 'Lunes a Viernes: 8:00 AM - 6:00 PM' },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-5 group">
-                <div className="w-14 h-14 bg-wine-800/60 border border-wine-700/30 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:border-gold-500/30 transition-colors">
-                  <span className="text-xl">{item.icon}</span>
-                </div>
-                <div>
-                  <p className="text-white/50 text-sm">{item.title}</p>
-                  <p className="text-white font-medium">{item.info}</p>
-                </div>
-              </div>
-            ))}
-
-            <div className="pt-6 border-t border-wine-800/50">
-              <p className="text-white/50 text-sm mb-4">Redes Sociales</p>
-              <div className="flex gap-3">
-                {['Facebook', 'Instagram', 'WhatsApp'].map((red, i) => (
-                  <a key={i} href="#" className="w-12 h-12 bg-wine-800/60 border border-wine-700/30 rounded-xl flex items-center justify-center text-white/60 hover:text-gold-500 hover:border-gold-500/30 transition-all">
-                    <span className="text-lg">{['📘', '📸', '💬'][i]}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -1,50 +1,64 @@
-import cultivoImg from '../assets/pexels-koprivakart-4144833.jpg'
-import sueloImg from '../assets/pexels-shvetsa-5230960.jpg'
-import riegoImg from '../assets/pexels-nikita-karpovich-3861361-5732561.jpg'
-import plagaImg from '../assets/pexels-rdne-7782351.jpg'
-import organicoImg from '../assets/pexels-melquizedeque-31173020.jpg'
-import planImg from '../assets/pexels-gustavo-fring-4975400.jpg'
+import ganadoImg from '../assets/650729244_18076863206614141_2951599525777551674_n.jpg'
+import corralImg from '../assets/121226907_575501216539253_5798751890701691224_n.jpg'
+import campoImg from '../assets/pexels-paulo-gustavo-modesto-1241776887-36378862.jpg'
 
 const Servicios = () => {
-  const servicios = [
-    { img: cultivoImg, title: 'Asesoría en Cultivos', desc: 'Acompañamiento técnico durante todo el ciclo de producción agrícola.' },
-    { img: sueloImg, title: 'Análisis de Suelos', desc: 'Estudios completos de composición, nutrientes, pH y materia orgánica.' },
-    { img: riegoImg, title: 'Sistemas de Riego', desc: 'Diseño e instalación de sistemas de riego eficientes y sustentables.' },
-    { img: plagaImg, title: 'Control de Plagas', desc: 'Manejo integrado de plagas con enfoque sustentable y preventivo.' },
-    { img: organicoImg, title: 'Agricultura Orgánica', desc: 'Transición y certificación para producción orgánica responsable.' },
-    { img: planImg, title: 'Planes de Negocio', desc: 'Proyectos productivos con análisis financiero y estudio de mercado.' },
-  ]
-
   return (
     <section id="servicios" className="bg-gray-50 section-padding">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <span className="text-gold-600 text-sm font-semibold tracking-widest uppercase mb-4 block">Lo que hacemos</span>
-          <h2 className="section-title text-wine-900">
-            Nuestros <span className="text-gold-600">Servicios</span>
-          </h2>
+        {/* Intro */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div>
+            <span className="text-gold-600 text-sm font-semibold tracking-widest uppercase mb-4 block">Lo que hacemos</span>
+            <h2 className="section-title text-wine-900 mb-6">
+              Engordamos tu <span className="text-gold-600">Ganado</span>
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed mb-4">
+              Trabajamos mediante la implementación de técnicas productivas eficientes e innovación
+              en los procesos, buscando mejorar la productividad, generar mayores ingresos para
+              nuestros socios y contribuir al fortalecimiento del sector ganadero en el municipio
+              de Teapa, Tabasco, México.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Laboramos en equipo, compartiendo conocimientos y técnicas para mejorar constantemente
+              nuestros métodos de producción. Nos enorgullece ser una parte importante de la industria
+              ganadera en nuestra región y contribuir al desarrollo económico de nuestra comunidad.
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-xl">
+            <img src={ganadoImg} alt="Engorda de ganado" className="w-full h-80 object-cover" />
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicios.map((s, i) => (
-            <div key={i} className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gold-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-gold-500/5 hover:-translate-y-1">
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-wine-900/60 to-transparent"></div>
+        {/* Servicios highlight */}
+        <div className="bg-wine-900 rounded-3xl p-8 md:p-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-gold-500 italic mb-6">
+                "Engorda de Ganado en Teapa"
+              </h3>
+              <p className="text-white/70 leading-relaxed mb-6">
+                Ofrecemos servicios de calidad y experiencia en el cuidado y alimentación de los
+                animales, garantizando un producto final de excelencia. ¡Confía en nosotros para
+                obtener la mejor carne de la zona!
+              </p>
+              <ul className="space-y-3">
+                {['Asesoría técnica ganadera', 'Comercialización de ganado', 'Capacitación en manejo animal'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80">
+                    <span className="text-gold-500">›</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="rounded-xl overflow-hidden">
+                <img src={corralImg} alt="Becerros en corral" className="w-full h-48 object-cover" />
               </div>
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-wine-900 mb-3 font-heading">{s.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{s.desc}</p>
-                <div className="w-0 group-hover:w-12 h-0.5 bg-gold-500 mt-4 transition-all duration-500"></div>
+              <div className="rounded-xl overflow-hidden">
+                <img src={campoImg} alt="Campo ganadero" className="w-full h-48 object-cover" />
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
