@@ -14,7 +14,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">🐄</span>
               <span className="font-heading font-bold text-lg text-gold-500">Productores Ganaderos</span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed">
