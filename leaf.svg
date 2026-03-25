@@ -1,0 +1,4 @@
+<!-- public/leaf.svg - Ícono de hoja como favicon -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#22c55e">
+  <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.5-3 9.5-9 .17-1 .5-3 .5-3s2.5 2 2.5 5.5c0 2.5-1.5 4.5-3.5 5.5L18 21c3-1.5 5-4.5 5-8 0-6-7-13-7-13s.5 2 1 5z"/>
+</svg>
