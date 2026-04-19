@@ -5,10 +5,10 @@ import bryanImg from '../assets/BRYAN RAFAEL MILLARES HERNANDEZ.jpeg'
 
 const Equipo = () => {
   const miembros = [
-    { nombre: 'Yamileth Perez Sanchez', cargo: 'Gerente general', img: yamilethImg },
-    { nombre: 'Edgar Perez Sanchez', cargo: 'Administrador de fincas', img: edgarImg },
-    { nombre: 'Jenifer Perez Perez', cargo: 'Encargada de compras y ventas de ganado', img: jeniferImg },
-    { nombre: 'Bryan Rafael Millares Hernández', cargo: 'Operador de maquinaria agrícola y mantenimiento', img: bryanImg },
+    { nombre: 'Yamileth Perez Sanchez', cargo: 'Dirección general', img: yamilethImg },
+    { nombre: 'Edgar Perez Sanchez', cargo: 'Área de Producción Pecuaria y Área de Sanidad', img: edgarImg },
+    { nombre: 'Jenifer Perez Perez', cargo: 'Área de Administración y Finanzas', img: jeniferImg },
+    { nombre: 'Bryan Rafael Millares Hernández', cargo: 'Área de Comercialización y Abastecimiento', img: bryanImg },
   ]
 
   return (

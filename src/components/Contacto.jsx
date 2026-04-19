@@ -49,7 +49,7 @@ const Contacto = () => {
                 {[
                   { icon: '📍', title: 'Productores Ganaderos', info: 'Teapa, Tabasco, 86800' },
                   { icon: '📞', title: '(+34) 947 002 963', info: '' },
-                  { icon: '✉️', title: 'yamiletperezsanchez@gmail.com', info: '' },
+                  { icon: '✉️', title: 'productores.engorda.sureste@gmail.com', info: '' },
                   { icon: '📘', title: '@pagina_de_Facebook', info: '' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 group">
